@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:repair/route/router.gr.dart';
 import 'package:repair/widget/text.dart';
 
 class ClientPage extends StatefulWidget {
@@ -91,6 +93,13 @@ class _ClientPageState extends State<ClientPage> {
                 const SizedBox(
                   height: 20,
                 ),
+                TextButton(
+                    onPressed: () {
+                      context.router.navigate(
+                        const KvitancyaPageRoute(),
+                      );
+                    },
+                    child: Text('Получить квитанцию')),
                 ElevatedButton(
                     onPressed: () async {
                       _addressClient.text;

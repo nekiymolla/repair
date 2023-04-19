@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:repair/presentation/authorization/authorization_page.dart';
+import 'package:repair/presentation/child_pages/client_page.dart';
+import 'package:repair/presentation/child_pages/employee_page.dart';
 import 'package:repair/presentation/main_page.dart';
 
 @MaterialAutoRouter(routes: [
@@ -12,6 +14,17 @@ import 'package:repair/presentation/main_page.dart';
       page: BottomNavPage,
       name: 'BottomNavPageRoute',
       path: '/bottomnavpage',
-      children: []),
+      children: [
+        AutoRoute(
+          page: ClientPage,
+          path: 'clientpageroute',
+          name: 'ClientPageRouter',
+        ),
+        AutoRoute(
+          page: EmployeePage,
+          path: 'employeepageroute',
+          name: 'EmployeePageRouter',
+        ),
+      ]),
 ])
 class $AppRouter {}

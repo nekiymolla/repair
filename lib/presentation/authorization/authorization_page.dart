@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:repair/route/router.gr.dart';
 import 'package:repair/widget/buttons.dart';
 import 'package:repair/widget/inputs.dart';
 import 'package:repair/widget/text.dart';
@@ -57,7 +59,13 @@ class _AuthPageState extends State<AuthPage> {
                 flex: 2,
               ),
               OnBoardingButtons(
-                  label: 'Войти', color: Colors.blue, fontColor: Colors.white),
+                label: 'Войти',
+                color: Colors.blue,
+                fontColor: Colors.white,
+                onPressed: () {
+                  context.router.replaceAll([const BottomNavPageRoute()]);
+                },
+              ),
               const Spacer(
                 flex: 1,
               ),

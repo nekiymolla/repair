@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:repair/route/router.gr.dart';
 
 class BottomNavPage extends StatefulWidget {
   const BottomNavPage({super.key});
@@ -15,7 +16,10 @@ class _BottomNavPageState extends State<BottomNavPage> {
     return AutoTabsScaffold(
         extendBody: true,
         backgroundColor: Colors.transparent,
-        routes: const [],
+        routes: const [
+          ClientPageRouter(),
+          EmployeePageRouter(),
+        ],
         bottomNavigationBuilder: (_, tabsRouter) {
           return DotNavigationBar(
             marginR: const EdgeInsets.symmetric(
@@ -41,24 +45,16 @@ class _BottomNavPageState extends State<BottomNavPage> {
             items: [
               //camps
               DotNavigationBarItem(
-                icon: const Icon(Icons.holiday_village_outlined),
+                icon: const Icon(Icons.person),
                 selectedColor: const Color(0xFF004E8F),
               ),
               //chat
               DotNavigationBarItem(
-                icon: const Icon(Icons.chat_outlined),
+                icon: const Icon(Icons.device_hub),
                 selectedColor: const Color(0xFF004E8F),
               ),
+
               //map
-              DotNavigationBarItem(
-                icon: const Icon(Icons.map_outlined),
-                selectedColor: const Color(0xFF004E8F),
-              ),
-              //profile
-              DotNavigationBarItem(
-                icon: const Icon(Icons.person_outline_rounded),
-                selectedColor: const Color(0xFF004E8F),
-              ),
             ],
           );
         });
